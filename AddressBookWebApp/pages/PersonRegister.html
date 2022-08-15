@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/PersonRegister.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <title>Person Register</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img
+            src="../assets/icons/addressBookIcon.svg"
+            alt="Logo"
+            class="logo_icon" 
+            />
+            <div class="logo_text">
+                <span>Address</span><br>
+                <span class="logo_text_book">book</span>
+            </div>
+        </div>
+    </header>
+    <div class="addressForm">
+        <form class="form" action="#" onsubmit="save();return false;" onreset="resetForm() ;return false;">
+            <span class="form_header">
+                <h2>Person Address Form</h2>
+                <img
+                src="../assets/icons/cancelIcon.png"
+                alt="cancel"
+                class="cancel_icon"
+                onclick="navigate()"
+            />
+            </span>
+            <div class="form_contents">
+                <div class="form_input_content">
+                    <label class="form_input_label text" for="personName">Person Name</label>
+                    <input type="text" class="input" name="personName" id="personName" placeholder="Enter Full Name Here" required>
+                    <error class="error" id="errorName"></error>
+                </div>
+                <div class="form_input_content">
+                    <label class="form_input_label text" for="phoneNumber">Phone Number</label>
+                    <div class="phNo">
+                        <select id="countryCode" name="countryCode" class="countryCode">
+                            <option value="+91">+91</option>
+                            <option value="+81">+81</option>
+                            <option value="044">+044</option>
+                            <option value="+23">+23</option>
+                            <option value="+80">+80</option>
+                            <option value="+32">+32</option>
+                        </select>
+                    <input type="number" class="input" name="phoneNumber" id="phoneNumber" placeholder="Enter PhoneNumber Here" required>
+                    </div>
+                    <error class="error" id="errorPhoneNumber"></error>
+                </div>
+                <div class="form_input_content">
+                    <label class="form_input_label text" for="address">Address</label>
+                    <textarea rows="4" class="input" placeholder="Enter Address Here" id="address" style="resize: none;" required></textarea>
+                </div>
+                <div class="form_input_content">
+                    <!-- <label class="form_input_label text" for="startDate">Start Date</label> -->
+                    <table>
+                        <tr id="table_label">
+                            <td class="text">State</td>
+                            <td class="text">City</td>
+                            <td class="text">Zip Code</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="state" name="state" class="selects" required>
+                                    <option value="">Select State</option>
+                                    <option value="tamilNadu">Tamil Nadu</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="andhraPradesh">Andhra Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="telungana">Telungana</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="city" name="city" class="selects" required>
+                                    <option value="">Select City</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div class="zipCodeclass">
+                                    <input type="text" class="input" name="zipCode" id="zipCode" placeholder="Enter Zip Code Here" required>
+                                    <error class="error" id="errorzipCode"></error>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <button type="reset" class="reset_button button">Reset</button>
+                    <button type="submit" class="submit_button button" id="submitButton">Submit</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <script src="../js/utility.js"></script>
+    <script src="../js/PersonRegister.js"></script>
+    <script src="../js/site_properties.js"></script>
+</body>
+</html>
